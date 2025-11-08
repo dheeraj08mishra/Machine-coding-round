@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import Setting from "./Pages/Setting";
+import Home from "./Pages/Home";
+import Report from "./Pages/Report";
+import NotFound from "./Pages/NotFound";
 import Dashboard from "./Component/Dashboard";
 import Transactions from "./Component/Transactions";
 import TransactionLists from "./Component/TransactionLists";
@@ -32,6 +37,18 @@ function App() {
 
   return (
     <>
+      <nav style={{ display: "flex", gap: 20, padding: 10 }}>
+        <Link to="/">Home</Link>
+        <Link to="/setting">Setting</Link>
+        <Link to="/report">Report</Link>
+      </nav>
+      <hr />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route path="/report" element={<Report />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <h1>Expense Tracker</h1>
       <Dashboard income={income} expense={expense} />
       <Transactions setTxns={setTxns} />
