@@ -6,7 +6,7 @@
 // function App() {
 //   const [loadReport, setLoadReport] = useState(0);
 //   const [loadAnalytics, setLoadAnalytics] = useState(0);
-//   const Report = React.lazy(() => import("./Components/Report.jsx"));
+//   const Report = React.lazy(() => import("./<Components>/Report.jsx"));
 //   const Analytics = React.lazy(() => import("./Components/Analytics.jsx"));
 
 //   const loadOtherComponents = async (component) => {
